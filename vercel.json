@@ -10,17 +10,5 @@
             "src": "/(.*)",
             "dest": "./main.py"
         }
-    ],
-    
-    "headers": [
-        {
-            "source": "/(.*)",
-            "headers": [
-                {
-                    "key": "Access-Control-Allow-Origin",
-                    "value": "*"
-                }
-            ]
-        }
     ]
 }
