@@ -2,13 +2,13 @@
     "rewrites": [
         {
             "source": "/(.*)",
-            "destination": "./main.py"
+            "destination": "./api/index.py"
         }
     ],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "./main.py"
+            "dest": "./api/index.py"
         }
     ]
 }
