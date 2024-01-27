@@ -29,7 +29,6 @@
           </li>
         </ul>
         <span class="navbar-text">  
-          Navbar text with an inline element
         </span>
       </div>
     </div>
@@ -38,38 +37,66 @@
     <h1>Reporte de Tabla</h1>
 
     <ul>
-      <li>gender(genero):masculino y femenino</li>
-      <li>hemoglobin(hemoglobina): nivel de la hemoglobina</li>
-      <li>MCH:cantidad de hemoglobina promedio de hemoglobina que se encuetra en cada glóbulos rojo</li>
-      <li>MCHC:concentración promedio de hemoglobina en cada glóbulo rojo</li>
-      <li>MCV:tamaño promedio de cada glóbulo rojo</li>
+      <li>Gender (Genero): Masculino = 0 y Femenino = 1</li>
+      <li>Hemoglobin (Hemoglobina): Nivel de la hemoglobina.</li>
+      <li>MCH: Cantidad de hemoglobina promedio de hemoglobina que se encuetra en cada glóbulos rojo.</li>
+      <li>MCHC: Concentración promedio de hemoglobina en cada glóbulo rojo.</li>
+      <li>MCV: Tamaño promedio de cada glóbulo rojo.</li>
     </ul>
+    <style>
+      table {
+          width: 80%;
+          margin: auto;
+          border-collapse: collapse;
+          border: 2px solid #ccc;
+          font-size: 16px;
+      }
 
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Gender</th>
-                <th>Hemoglobina</th>
-                <th>MCH</th>
-                <th>MCHC</th>
-                <th>MCV</th>
-                <th>Result</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for row in data.values %}
-                <tr>
-                    <td>{{ row[0] }}</td>
-                    <td>{{ row[1] }}</td>
-                    <td>{{ row[2] }}</td>
-                    <td>{{ row[3] }}</td>
-                    <td>{{ row[4] }}</td>
-                    <td>{{ row[5] }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+      th, td {
+          border: 1px solid #ddd;
+          padding: 12px;
+          text-align: center;
+      }
 
+      th {
+          background-color: #f2f2f2;
+      }
+
+      tbody tr:nth-child(even) {
+          background-color: #f9f9f9;
+      }
+
+      tbody tr:hover {
+          background-color: #e0e0e0;
+      }
+  </style>
+</head>
+<body>
+
+  <table>
+      <thead>
+          <tr>
+              <th>Genero</th>
+              <th>Hemoglobina</th>
+              <th>MCH</th>
+              <th>MCHC</th>
+              <th>MCV</th>
+              <th>Resultados</th>
+          </tr>
+      </thead>
+      <tbody>
+          {% for row in data.values %}
+              <tr>
+                  <td>{{ row[0] }}</td>
+                  <td>{{ row[1] }}</td>
+                  <td>{{ row[2] }}</td>
+                  <td>{{ row[3] }}</td>
+                  <td>{{ row[4] }}</td>
+                  <td>{{ row[5] }}</td>
+              </tr>
+          {% endfor %}
+      </tbody>
+  </table>
   <form method="get" action="{{ url_for('descargar_tabla') }}">
       <button type="submit" class="btn btn-primary mt-3">Descargar toda la base de datos</button>
   </form>
