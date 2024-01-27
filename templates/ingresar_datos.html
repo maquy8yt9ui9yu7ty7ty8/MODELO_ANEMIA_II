@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="">
+  <nav class="navbar navbar-expand-lg bg-red-600" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand font-bold" href="/">PREDICCION</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/predecir_anemia">Datos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/mostrar_tabla">Tabla</a>
+          </li>
+        </ul>
+        <span class="navbar-text">  
+          Navbar text with an inline element
+        </span>
+      </div>
+    </div>
+  </nav>
+
+<div class="mx-8">
+	<!--termina el navbar-->
+	<!--titulo que tendremos al entrar a la apliacion-->
+	<h1 class="text-red-700 font-bold text-2xl">COMPRUEBA SI TIENE ANEMIA</h1>
+	<!--texto que ira de inicio de nuestra aplicacion-->
+	<p>La anemia es una condición médica que se caracteriza por una disminución en la cantidad de glóbulos rojos o de hemoglobina en la sangre. Este fenómeno compromete la eficiencia del transporte de oxígeno, dando lugar a síntomas como fatiga, palidez y dificultad para respirar. Las raíces de la anemia pueden encontrarse en deficiencias nutricionales, pérdida de sangre o alteraciones en la producción de glóbulos rojos.</p>
+	
+	<!-- COLOCAR EL LINK DIRECTO -->
+	<form action="/procesar_datos" method="post" style="width: 100%;display:flex;flex-direction: column;;align-items: flex-start;justify-content: center;">
+	  <div class="flex my-8 flex-wrap">
+		  <div class="flex gap-3">
+			  <label for="dato1" class="font-semibold uppercase">genero:</label>
+			  <input type="text" id="dato1" name="dato1" required class="border-[1px] border-slate-600"><br>
+		  </div>
+		  <div class="flex gap-3">
+			  <label for="dato2" class="font-semibold uppercase">hemoglobina:</label>
+			  <input type="text" id="dato2" name="dato2" required class="border-[1px] border-slate-600"><br>
+		  </div>
+		  
+		  <div class="flex gap-3">
+			  <label for="dato3" class="font-semibold uppercase">MCH:</label>
+			  <input type="text" id="dato3" name="dato3" required class="border-[1px] border-slate-600"><br>
+		  </div>
+		  <div class="flex gap-3">
+			  <label for="dato4" class="font-semibold uppercase">MCHC:</label>
+			  <input type="text" id="dato4" name="dato4" required class="border-[1px] border-slate-600"><br>
+		  </div>
+		  <div class="flex gap-3">
+
+		  </div>
+		  <label for="dato5" class="font-semibold uppercase">MCV:</label>
+		  <input type="text" id="dato5" name="dato5" required class="border-[1px] border-slate-600"><br>
+		  
+		</div>
+        <button class="px-3 py-2 bg-red-500 font-bold text-white rounded-[1rem]" type="submit">Enviar Datos</button>
+
+		</form>
+		
+</div>  
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</html>
+</body>
+</html>

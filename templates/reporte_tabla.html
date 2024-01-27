@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<!-- agregame el encabezado "navbar navbar-expand-lg bg-red-600" -->
+  
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">PREDICCION</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/predecir_anemia">Datos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/mostrar_tabla">Tabla</a>
+          </li>
+        </ul>
+        <span class="navbar-text">  
+          Navbar text with an inline element
+        </span>
+      </div>
+    </div>
+</nav>
+
+    <h1>Reporte de Tabla</h1>
+
+    <ul>
+      <li>gender(genero):masculino y femenino</li>
+      <li>hemoglobin(hemoglobina): nivel de la hemoglobina</li>
+      <li>MCH:cantidad de hemoglobina promedio de hemoglobina que se encuetra en cada glóbulos rojo</li>
+      <li>MCHC:concentración promedio de hemoglobina en cada glóbulo rojo</li>
+      <li>MCV:tamaño promedio de cada glóbulo rojo</li>
+    </ul>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Gender</th>
+                <th>Hemoglobina</th>
+                <th>MCH</th>
+                <th>MCHC</th>
+                <th>MCV</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data.values %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[3] }}</td>
+                    <td>{{ row[4] }}</td>
+                    <td>{{ row[5] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+  <form method="get" action="{{ url_for('descargar_tabla') }}">
+      <button type="submit" class="btn btn-primary mt-3">Descargar toda la base de datos</button>
+  </form>
+
+</body>
+</html>
